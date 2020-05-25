@@ -1,0 +1,45 @@
+﻿<Window x:Class="Lab10.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab10"
+        mc:Ignorable="d"
+        Title="Car database" Height="450" Width="1000"
+        ResizeMode="NoResize">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"></RowDefinition>
+            <RowDefinition Height="342*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <Button Margin="10" FontSize="25" x:Name="addCarButton" Click="addCarButton_Click">
+            Add car
+        </Button>
+
+        <Button Margin="10" Grid.Row="0" Grid.Column="1" FontSize="25" x:Name="deleteCarButton" Click="deleteCarButton_Click">
+            Remove selected car
+        </Button>
+
+        <Button Margin="10" Grid.Row="0" Grid.Column="2" FontSize="25" x:Name="ownerInfoButton" Click="ownerInfoButton_Click">
+            Car's Owner info
+        </Button>
+
+        <DataGrid x:Name="carsDG" Grid.Row="1" Grid.ColumnSpan="3">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Car model" Width="200" Binding="{Binding model}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Production date" Width="200" Binding="{Binding productionDate}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Door number" Width="200" Binding="{Binding doorNumber}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Mileage" Width="200" Binding="{Binding przebieg}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Reg. number" Width="200" Binding="{Binding NrRejestracyjny}"></DataGridTextColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</Window>
